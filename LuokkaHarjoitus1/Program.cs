@@ -9,6 +9,7 @@ namespace LuokkaHarjoitus1
 
     class Pet
     {
+        // Eats method is explicitly defined to be over written in the subclass with keyword "virtual"
         public virtual void Eats()
         {
             Console.WriteLine("Eats some food");
@@ -17,9 +18,9 @@ namespace LuokkaHarjoitus1
 
     class Hare : Pet 
     { 
+        // Override allows overwriting base class methods
         public override void Eats()
         {
-            base.Eats();
             Console.WriteLine("Eats some carrots and grass");
         }
     }
@@ -107,6 +108,8 @@ namespace LuokkaHarjoitus1
             // Create a new dog owner and call sayOpinion method
             DogOwner dogOwner = new DogOwner();
             dogOwner.SayOpinion();
+
+
 
             // Keep the window open until key is pressed
             Console.ReadLine();
