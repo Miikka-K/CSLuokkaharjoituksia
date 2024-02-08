@@ -6,6 +6,23 @@ using System.Threading.Tasks;
 
 namespace LuokkaHarjoitus1
 {
+
+    class Pet
+    {
+        public virtual void Eats()
+        {
+            Console.WriteLine("Eats some food");
+        }
+    }
+
+    class Hare : Pet 
+    { 
+        public override void Eats()
+        {
+            base.Eats();
+            Console.WriteLine("Eats some carrots and grass");
+        }
+    }
     class Hooman
     {
         // Define properties of Hooman ie. fields
@@ -51,7 +68,7 @@ namespace LuokkaHarjoitus1
 
     class CatOwner : Hooman
     { 
-        public void SayOpinion()
+        public new void SayOpinion()
         {
             Console.WriteLine("Kissat ovat itsenäisiä ja pitävät hiiret loitolla");
         }
@@ -59,7 +76,7 @@ namespace LuokkaHarjoitus1
 
     class DogOwner : Hooman
     {
-        public void SayOpinion()
+        public new void SayOpinion()
         {
             Console.WriteLine("Koirat ovat kyllä mukavempia elukoita kuin kissat");
         }
@@ -87,6 +104,7 @@ namespace LuokkaHarjoitus1
             // Use catowners SayOpinion method
             catOwner.SayOpinion();
 
+            // Create a new dog owner and call sayOpinion method
             DogOwner dogOwner = new DogOwner();
             dogOwner.SayOpinion();
 
